@@ -138,6 +138,7 @@ run() {
     local _version_that_will_be_built=$(__remote "
       [ -f $PROFILE ] && source $PROFILE
       cd $BUILD_AT $SILENCE
+      [ -n \"$APP_SUBDIR\" ] && cd \"$APP_SUBDIR\"
       MIX_ENV=\"$TARGET_MIX_ENV\" $MIX_CMD $_version_command
     ")
     [[ -n "$WITH" ]] && local _old_version="$WITH" || local _old_version="$OLD_RELEASE_VERSION"
