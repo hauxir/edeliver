@@ -27,11 +27,7 @@ defmodule Edeliver.Mixfile do
 
   defp deps do
     [
-      {:distillery,
-       git: "https://github.com/altenwald/distillery.git",
-       commit: "7c749b0",
-       optional: true,
-       warn_missing: false},
+      {:distillery, git: "https://github.com/altenwald/distillery.git", commit: "7c749b0"},
       {:meck, "~> 0.8.13", only: :test},
       {:ex_doc, ">= 0.28.4", only: :dev, runtime: false}
     ]
