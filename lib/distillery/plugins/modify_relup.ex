@@ -12,8 +12,11 @@ defmodule Releases.Plugin.ModifyRelup do
     end
     ```
   """
-  use Distillery.Releases.Plugin
+
+  # Manual behavior implementation to avoid circular dependency during compilation
+  alias Distillery.Releases.Release
   alias Edeliver.Relup.Instructions
+  import Distillery.Releases.Shell, only: [debug: 1, info: 1]
 
   def before_assembly(_, _), do: nil
 
